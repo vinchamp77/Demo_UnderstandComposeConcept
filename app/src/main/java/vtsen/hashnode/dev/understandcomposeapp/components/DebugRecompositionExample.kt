@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 
 
 @Composable
-fun Example1() {
+fun DebugRecompositionExample() {
     var count by remember { mutableStateOf(0) }
 
     LogCompositions("DebugRecomposition", "Example1() function scope")
@@ -23,6 +23,7 @@ fun Example1() {
 
 @Composable
 fun MyButton(
+
     onClick: () -> Unit,
     text: String) {
 

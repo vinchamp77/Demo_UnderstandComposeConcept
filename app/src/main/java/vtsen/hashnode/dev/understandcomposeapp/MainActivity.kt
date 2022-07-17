@@ -26,7 +26,7 @@ fun MainScreen(useSystemUIController: Boolean = true) {
 
         LogCompositions("DebugRecomposition", "UnderstandComposeAppTheme() content scope")
 
-        Example1()
+        DebugRecompositionExample()
     }
 }
 
