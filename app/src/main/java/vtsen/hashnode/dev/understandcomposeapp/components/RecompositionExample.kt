@@ -7,10 +7,10 @@ import androidx.compose.runtime.*
 
 
 @Composable
-fun DebugRecompositionExample() {
+fun RecompositionExample() {
     var count by remember { mutableStateOf(0) }
 
-    LogCompositions("DebugRecomposition", "Example1() function scope")
+    LogCompositions("DebugRecomposition", "DebugRecompositionExample() function scope")
 
     Column {
 

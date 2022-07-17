@@ -3,6 +3,8 @@ package vtsen.hashnode.dev.understandcomposeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
+import androidx.compose.material.Divider
 import androidx.compose.runtime.*
 import vtsen.hashnode.dev.understandcomposeapp.components.*
 
@@ -26,7 +28,11 @@ fun MainScreen(useSystemUIController: Boolean = true) {
 
         LogCompositions("DebugRecomposition", "UnderstandComposeAppTheme() content scope")
 
-        DebugRecompositionExample()
+        Column {
+            RecompositionExample()
+            Divider()
+            RememberExample()
+        }
     }
 }
 
