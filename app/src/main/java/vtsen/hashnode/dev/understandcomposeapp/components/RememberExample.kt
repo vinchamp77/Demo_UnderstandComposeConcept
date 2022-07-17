@@ -8,26 +8,26 @@ import androidx.compose.runtime.*
 
 @Composable
 fun RememberExample() {
-    var countNoRemember = getInitValue()
-    var countWithRemember = remember { getInitValue() }
-    var countWithRememberMutableState by remember { mutableStateOf(getInitValue()) }
+    var countNormal = getInitValue()
+    var countRemember = remember { getInitValue() }
+    var countRememberMutableState by remember { mutableStateOf(getInitValue()) }
 
     Column {
-        Text(text = "countWithoutRemember: $countNoRemember")
-        Text(text = "countWithRemember: $countWithRemember")
-        Text(text = "countWithRememberMutableState.value: ${countWithRememberMutableState}")
+        Text(text = "countNormal: $countNormal")
+        Text(text = "countRemember: $countRemember")
+        Text(text = "countRememberMutableState: ${countRememberMutableState}")
 
         Button(onClick = {
-            ++countNoRemember
+            ++countNormal
         }) { Text(text = "++countWithoutRemember") }
 
         Button(onClick = {
-            ++countWithRemember
+            ++countRemember
 
         }) { Text(text = "++countWithRemember") }
 
         Button(onClick = {
-            ++countWithRememberMutableState
+            ++countRememberMutableState
         }) { Text(text = "++countWithRememberMutableState.value") }
     }
 }
