@@ -32,6 +32,8 @@ fun MainScreen(useSystemUIController: Boolean = true) {
             RecompositionExample()
             Divider()
             RememberExample()
+            Divider()
+            CompositionLocalDemo()
         }
     }
 }
