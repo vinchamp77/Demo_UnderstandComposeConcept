@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.*
 
 val LocalInt = compositionLocalOf { 0 }
+val LocalStaticInt = staticCompositionLocalOf { 0 }
 
 @Composable
 fun CompositionLocalDemo() {
@@ -15,24 +16,30 @@ fun CompositionLocalDemo() {
     MyButton(onClick = { run = !run }, text = "CompositionLocal Demo")
 
     if (run) {
-        CompositionLocalProvider(LocalInt provides 1) {
-            Parent1()
+        CompositionLocalProvider(
+            LocalInt provides 1,
+            LocalStaticInt provides 1
+        ) {
+            Parent()
         }
     }
 }
 
 @Composable
-fun Parent1() {
-    Log.d("LocalInt", "Parent1: ${LocalInt.current}")
+fun Parent() {
+    Log.d("LocalInt", "Parent - LocalInt: ${LocalInt.current} LocalStaticInt: ${LocalStaticInt.current}")
 
-    CompositionLocalProvider(LocalInt provides 2) {
-        Child1()
+    CompositionLocalProvider(
+        LocalInt provides 2,
+        LocalStaticInt provides 2
+    ) {
+        Child()
     }
 
-    Log.d("LocalInt", "Parent1: ${LocalInt.current}")
+    Log.d("LocalInt", "Parent - LocalInt: ${LocalInt.current} LocalStaticInt: ${LocalStaticInt.current}")
 }
 
 @Composable
-fun Child1() {
-    Log.d("LocalInt", "Child1: ${LocalInt.current}")
+fun Child() {
+    Log.d("LocalInt", "Child - LocalInt: ${LocalInt.current} LocalStaticInt: ${LocalStaticInt.current}")
 }
