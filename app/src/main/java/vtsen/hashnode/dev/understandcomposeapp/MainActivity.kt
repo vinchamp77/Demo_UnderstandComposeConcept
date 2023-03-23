@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material.Divider
 import androidx.compose.runtime.*
+import androidx.compose.ui.unit.dp
 import vtsen.hashnode.dev.understandcomposeapp.components.*
 
 import vtsen.hashnode.dev.understandcomposeapp.ui.theme.UnderstandComposeAppTheme
@@ -30,10 +31,11 @@ fun MainScreen(useSystemUIController: Boolean = true) {
 
         Column {
             RecompositionExample()
-            Divider()
+            Divider(thickness = 2.dp)
             RememberExample()
-            Divider()
+            Divider(thickness = 2.dp)
             CompositionLocalDemo()
+            StaticCompositionLocalDemo()
         }
     }
 }

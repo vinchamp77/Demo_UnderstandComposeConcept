@@ -3,10 +3,10 @@ package vtsen.hashnode.dev.understandcomposeapp.components
 import android.util.Log
 import androidx.compose.runtime.*
 
-private val LocalInt = compositionLocalOf { 0 }
+private val LocalInt = staticCompositionLocalOf { 0 }
 
 @Composable
-fun CompositionLocalDemo() {
+fun StaticCompositionLocalDemo() {
 
     var counter by remember {
         mutableStateOf(0)
