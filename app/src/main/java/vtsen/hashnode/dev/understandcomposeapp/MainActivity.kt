@@ -31,9 +31,10 @@ fun MainScreen(useSystemUIController: Boolean = true) {
 
         Column {
             RecompositionExample()
-            Divider(thickness = 2.dp)
+            Divider(thickness = 3.dp)
             RememberExample()
-            Divider(thickness = 2.dp)
+            Divider(thickness = 3.dp)
+            PassByValueDemo()
             CompositionLocalDemo()
             StaticCompositionLocalDemo()
         }

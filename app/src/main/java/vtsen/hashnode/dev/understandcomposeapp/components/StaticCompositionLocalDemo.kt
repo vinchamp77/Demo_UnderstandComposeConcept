@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.compose.runtime.*
 
 private val LocalInt = staticCompositionLocalOf { 0 }
-private val tag = "StaticCompLocal"
+private val tag = "CompLocal"
 
 @Composable
 fun StaticCompositionLocalDemo() {
@@ -21,9 +21,6 @@ fun StaticCompositionLocalDemo() {
     ) {
         Parent()
     }
-    Log.d(tag, "************** Pass by Value **************")
-
-    Parent(counter)
 }
 
 @Composable
@@ -51,22 +48,4 @@ private fun Child() {
 @Composable
 private fun GrandChild() {
     Log.d(tag, "Enter GrandChild")
-}
-
-@Composable
-private fun Parent(value: Int) {
-    Log.d(tag, "Enter Parent - value: $value")
-
-    Child(value + 1)
-
-    Log.d(tag, "Exit Parent - value: $value")
-}
-
-@Composable
-private fun Child(value: Int) {
-    Log.d(tag, "Enter Child - value: $value")
-
-    GrandChild()
-
-    Log.d(tag, "Exit Child - value: $value")
 }
