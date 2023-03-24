@@ -21,24 +21,25 @@ fun PassByValueDemo() {
 
 @Composable
 private fun Parent(value: Int) {
-    Log.d(tag, "Enter Parent - value: $value")
+    Log.d(tag, "Start Parent - value: $value")
 
     Child(value + 1)
 
-    Log.d(tag, "Exit Parent - value: $value")
+    Log.d(tag, "End Parent - value: $value")
 }
 
 @Composable
 private fun Child(value: Int) {
-    Log.d(tag, "Enter Child - value: $value")
+    Log.d(tag, "Start Child - value: $value")
 
     GrandChild()
 
-    Log.d(tag, "Exit Child - value: $value")
+    Log.d(tag, "End Child - value: $value")
 }
 
 
 @Composable
 private fun GrandChild() {
-    Log.d(tag, "Enter GrandChild")
+    Log.d(tag, "Start GrandChild")
+    Log.d(tag, "End GrandChild")
 }

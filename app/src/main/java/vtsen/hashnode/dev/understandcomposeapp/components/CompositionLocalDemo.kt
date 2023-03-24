@@ -25,7 +25,7 @@ fun CompositionLocalDemo() {
 
 @Composable
 private fun Parent() {
-    Log.d(tag, "Enter Parent - LocalInt: ${LocalInt.current} ")
+    Log.d(tag, "Start Parent - LocalInt: ${LocalInt.current} ")
 
     CompositionLocalProvider(
         LocalInt provides LocalInt.current + 1,
@@ -33,19 +33,20 @@ private fun Parent() {
         Child()
     }
 
-    Log.d(tag, "Exit Parent - LocalInt: ${LocalInt.current}")
+    Log.d(tag, "End Parent - LocalInt: ${LocalInt.current}")
 }
 
 @Composable
 private fun Child() {
-    Log.d(tag, "Enter Child - LocalInt: ${LocalInt.current} ")
+    Log.d(tag, "Start Child - LocalInt: ${LocalInt.current} ")
 
     GrandChild()
 
-    Log.d(tag, "Exit Child - LocalInt: ${LocalInt.current} ")
+    Log.d(tag, "Emd Child - LocalInt: ${LocalInt.current} ")
 }
 
 @Composable
 private fun GrandChild() {
-    Log.d(tag, "Enter GrandChild")
+    Log.d(tag, "Start GrandChild")
+    Log.d(tag, "End GrandChild")
 }
