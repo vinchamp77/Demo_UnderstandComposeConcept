@@ -1,7 +1,8 @@
-package vtsen.hashnode.dev.understandcomposeapp.components
+package vtsen.hashnode.dev.understandcomposeapp.components.compositionlocal
 
 import android.util.Log
 import androidx.compose.runtime.*
+import vtsen.hashnode.dev.understandcomposeapp.components.MyButton
 
 private val LocalInt = staticCompositionLocalOf { 0 }
 private val tag = "CompLocal"
@@ -10,10 +11,12 @@ private val tag = "CompLocal"
 fun StaticCompositionLocalDemo() {
 
     var counter by remember {
-        mutableStateOf(0)
+        mutableStateOf(-1)
     }
 
     MyButton(onClick = { ++counter }, text = "StaticCompositionLocal Demo")
+
+    if(counter < 0) return
 
     Log.d(tag, "************** Using StaticCompositionLocal **************")
     CompositionLocalProvider(
@@ -39,9 +42,7 @@ private fun Parent() {
 @Composable
 private fun Child() {
     Log.d(tag, "Start Child - LocalInt: ${LocalInt.current} ")
-
     GrandChild()
-
     Log.d(tag, "End Child - LocalInt: ${LocalInt.current} ")
 }
 

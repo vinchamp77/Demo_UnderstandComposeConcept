@@ -8,6 +8,9 @@ import androidx.compose.material.Divider
 import androidx.compose.runtime.*
 import androidx.compose.ui.unit.dp
 import vtsen.hashnode.dev.understandcomposeapp.components.*
+import vtsen.hashnode.dev.understandcomposeapp.components.compositionlocal.CompositionLocalDemo
+import vtsen.hashnode.dev.understandcomposeapp.components.compositionlocal.PassByValueDemo
+import vtsen.hashnode.dev.understandcomposeapp.components.compositionlocal.StaticCompositionLocalDemo
 
 import vtsen.hashnode.dev.understandcomposeapp.ui.theme.UnderstandComposeAppTheme
 
